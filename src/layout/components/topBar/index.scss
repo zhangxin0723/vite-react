@@ -1,0 +1,15 @@
+.topbar {
+  box-shadow: 0 2px 8px #00000026;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 16px;
+  .web-title {
+    font-size: 18px;
+    color: #000;
+  }
+  .user-info {
+    cursor: pointer;
+  }
+}
