@@ -19,6 +19,7 @@ const GlobalTableForm: React.FC<GlobalTableFormProps> = (props) => {
 
   const changeDatePicker = (date: dayjs.Dayjs, dateString: string | Array<string>, name: string | Array<string>) => {
     // form.setFieldsValue({ [name]: dateString })
+    console.log(date, dateString, name);
   }
 
   return (

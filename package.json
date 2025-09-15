@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --mode development",
-    "build": "tsc -b && vite build --mode production",
+    "build": "tsc -b && vite build --mode production && sh deploy/deploy.sh 1.0.0 admin",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@types/node": "^24.4.0",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@types/redux-logger": "^3.0.13",

@@ -26,7 +26,7 @@ const getUserInfo = ({ appToken, userToken }: {
   })
 }
 
-const authMiddleware = async (params) => {
+const authMiddleware = async (params: { request: { url: string | URL } }) => {
   const url: URL = new URL(params.request.url);
   const appToken: string | null = url.searchParams.get('appToken');
   const userToken: string | null = url.searchParams.get('userToken');

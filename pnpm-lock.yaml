@@ -42,6 +42,9 @@ importers:
       '@eslint/js':
         specifier: ^9.33.0
         version: 9.34.0
+      '@types/node':
+        specifier: ^24.4.0
+        version: 24.4.0
       '@types/react':
         specifier: ^19.1.10
         version: 19.1.11
@@ -53,7 +56,7 @@ importers:
         version: 3.0.13
       '@vitejs/plugin-react-swc':
         specifier: ^4.0.0
-        version: 4.0.1(vite@7.1.3(sass@1.90.0)(terser@5.43.1))
+        version: 4.0.1(vite@7.1.3(@types/node@24.4.0)(sass@1.90.0)(terser@5.43.1))
       eslint:
         specifier: ^9.33.0
         version: 9.34.0
@@ -80,10 +83,10 @@ importers:
         version: 8.40.0(eslint@9.34.0)(typescript@5.8.3)
       vite:
         specifier: ^7.1.2
-        version: 7.1.3(sass@1.90.0)(terser@5.43.1)
+        version: 7.1.3(@types/node@24.4.0)(sass@1.90.0)(terser@5.43.1)
       vite-plugin-html:
         specifier: ^3.2.2
-        version: 3.2.2(vite@7.1.3(sass@1.90.0)(terser@5.43.1))
+        version: 3.2.2(vite@7.1.3(@types/node@24.4.0)(sass@1.90.0)(terser@5.43.1))
 
 packages:
 
@@ -743,6 +746,9 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+
+  '@types/node@24.4.0':
+    resolution: {integrity: sha512-gUuVEAK4/u6F9wRLznPUU4WGUacSEBDPoC2TrBkw3GAnOLHBL45QdfHOXp1kJ4ypBGLxTOB+t7NJLpKoC3gznQ==}
 
   '@types/react-dom@19.1.7':
     resolution: {integrity: sha512-i5ZzwYpqjmrKenzkoLM2Ibzt6mAsM7pxB6BCIouEVVmgiqaMj1TjaK7hnA36hbW5aZv20kx7Lw6hWzPWg0Rurw==}
@@ -1743,6 +1749,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  undici-types@7.11.0:
+    resolution: {integrity: sha512-kt1ZriHTi7MU+Z/r9DOdAI3ONdaR3M3csEaRc6ewa4f4dTvX4cQCbJ4NkEn0ohE4hHtq85+PhPSTY+pO/1PwgA==}
+
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
     engines: {node: '>= 10.0.0'}
@@ -2311,6 +2320,10 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
+  '@types/node@24.4.0':
+    dependencies:
+      undici-types: 7.11.0
+
   '@types/react-dom@19.1.7(@types/react@19.1.11)':
     dependencies:
       '@types/react': 19.1.11
@@ -2418,11 +2431,11 @@ snapshots:
       '@typescript-eslint/types': 8.40.0
       eslint-visitor-keys: 4.2.1
 
-  '@vitejs/plugin-react-swc@4.0.1(vite@7.1.3(sass@1.90.0)(terser@5.43.1))':
+  '@vitejs/plugin-react-swc@4.0.1(vite@7.1.3(@types/node@24.4.0)(sass@1.90.0)(terser@5.43.1))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.32
       '@swc/core': 1.13.5
-      vite: 7.1.3(sass@1.90.0)(terser@5.43.1)
+      vite: 7.1.3(@types/node@24.4.0)(sass@1.90.0)(terser@5.43.1)
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -3485,6 +3498,8 @@ snapshots:
 
   typescript@5.8.3: {}
 
+  undici-types@7.11.0: {}
+
   universalify@2.0.1: {}
 
   uri-js@4.4.1:
@@ -3495,7 +3510,7 @@ snapshots:
     dependencies:
       react: 19.1.1
 
-  vite-plugin-html@3.2.2(vite@7.1.3(sass@1.90.0)(terser@5.43.1)):
+  vite-plugin-html@3.2.2(vite@7.1.3(@types/node@24.4.0)(sass@1.90.0)(terser@5.43.1)):
     dependencies:
       '@rollup/pluginutils': 4.2.1
       colorette: 2.0.20
@@ -3509,9 +3524,9 @@ snapshots:
       html-minifier-terser: 6.1.0
       node-html-parser: 5.4.2
       pathe: 0.2.0
-      vite: 7.1.3(sass@1.90.0)(terser@5.43.1)
+      vite: 7.1.3(@types/node@24.4.0)(sass@1.90.0)(terser@5.43.1)
 
-  vite@7.1.3(sass@1.90.0)(terser@5.43.1):
+  vite@7.1.3(@types/node@24.4.0)(sass@1.90.0)(terser@5.43.1):
     dependencies:
       esbuild: 0.25.9
       fdir: 6.5.0(picomatch@4.0.3)
@@ -3520,6 +3535,7 @@ snapshots:
       rollup: 4.48.0
       tinyglobby: 0.2.14
     optionalDependencies:
+      '@types/node': 24.4.0
       fsevents: 2.3.3
       sass: 1.90.0
       terser: 5.43.1
