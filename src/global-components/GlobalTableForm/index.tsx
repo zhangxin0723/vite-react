@@ -11,7 +11,6 @@ interface GlobalTableFormProps {
 const GlobalTableForm: React.FC<GlobalTableFormProps> = (props) => {
   const { formFieldsOptions = [] } = props
   const [form] = Form.useForm();
-  console.log('form: ', form);
 
   const onFinish = (values: any) => {
     console.log('Received values of form: ', values);

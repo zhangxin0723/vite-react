@@ -1,13 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
 import '@ant-design/v5-patch-for-react-19';
 import Routers from './router/routers.tsx';
 import "@/assets/style/index.scss";
 import { store, persistor } from "@/store"
 import { Provider } from "react-redux"
 import { PersistGate } from 'redux-persist/integration/react'; // 引入 PersistGate
-import { ConfigProvider, App } from "antd"
+import { ConfigProvider, App, Spin } from "antd"
 import locale from 'antd/locale/zh_CN';
 import dayjs from 'dayjs';
 
@@ -42,7 +41,7 @@ createRoot(document.getElementById('root')!).render(
       <App>
         <Provider store={store}>
           <PersistGate
-            loading={<div>Loading...</div>} // 加载状态（可选）
+            loading={<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}><Spin size="large" /></div>} // 加载状态（可选）
             persistor={persistor}
           >
             <Routers />

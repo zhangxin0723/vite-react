@@ -1,0 +1,42 @@
+.global-table-container {
+  margin-top: 20px;
+  background: #fff;
+
+  .ant-table-wrapper,
+  .ant-spin-nested-loading,
+  .ant-spin-container {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .ant-spin-container {
+    display: flex;
+    flex-direction: column;
+
+    .ant-table {
+      flex: 1;
+      // height: calc(100% - 52px);
+      overflow: hidden;
+
+      .ant-table-container {
+        height: 100%;
+
+        .ant-table-tbody {
+          overflow-y: auto;
+          // background: #000;
+        }
+      }
+
+      .ant-table-cell button {
+        padding: 0 8px 0 0;
+      }
+    }
+
+    .ant-pagination {
+      // margin: 0;
+      // height: 52px;
+      // display: flex;
+      // align-items: center;
+    }
+  }
+}

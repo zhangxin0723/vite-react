@@ -1,7 +1,9 @@
 import React from 'react'
 import type { MenuProps } from 'antd';
 import { Dropdown, App } from 'antd'
+import { DownOutlined } from '@ant-design/icons';
 import './index.scss'
+import Breadcrumb from './Breadcrumb';
 
 const { webTitle } = (window as any).globalConstant ?? {}
 
@@ -32,10 +34,12 @@ const TopBar: React.FC = () => {
   ];
 
   return <div className="topbar">
-    <div className="web-title">{webTitle}</div>
+    <div className="web-title">{webTitle}
+      <Breadcrumb />
+    </div>
     <div className="user-info">
       <Dropdown menu={{ items }} placement="bottomRight" arrow trigger={['click']}>
-        <span className="user-name">admin</span>
+        <span className="user-name">admin <DownOutlined /></span>
       </Dropdown>
     </div>
   </div>

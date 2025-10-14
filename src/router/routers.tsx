@@ -8,6 +8,7 @@ const Home = React.lazy(() => import('@/pages/home/index'))
 const About = React.lazy(() => import('@/pages/about/index'))
 const Mine = React.lazy(() => import('@/pages/mine/index'))
 const ArticleList = React.lazy(() => import("@/pages/article/list"))
+const ArticleDetail = React.lazy(() => import("@/pages/article/detail"))
 
 const getUserInfo = ({ appToken, userToken }: {
   appToken: string,
@@ -64,6 +65,7 @@ const router = createBrowserRouter([
         index: true,
         element: <PrivateRoute><Home /></PrivateRoute>,
         loader: authMiddleware,
+        handle: { breadcrumb: '首页' }
         // element: <About />
       },
       {
@@ -85,6 +87,13 @@ const router = createBrowserRouter([
             index: true,
             element: <PrivateRoute><ArticleList /></PrivateRoute>,
             loader: authMiddleware,
+            handle: { breadcrumb: '文章管理' }
+          },
+          {
+            path: ":id",
+            element: <PrivateRoute><ArticleDetail /></PrivateRoute>,
+            loader: authMiddleware,
+            handle: { breadcrumb: ({ params }: any) => `用户详情: ${params.id}` }
           }
         ]
       }
