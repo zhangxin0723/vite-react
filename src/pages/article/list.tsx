@@ -1,4 +1,4 @@
-import React, { act } from 'react'
+import React from 'react'
 import GlobalTableForm from '@/global-components/GlobalTableForm'
 import GlobalTable from '@/global-components/GlobalTable'
 import GlobalContentTitle from '@/global-components/GlobalContentTitle'

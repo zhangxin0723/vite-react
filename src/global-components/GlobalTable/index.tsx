@@ -42,7 +42,8 @@ const TableMethods: React.FC<TableMethodsProps> = (props) => {
         menu={{
           items: moreBtns.map((method) => ({
             key: method.key,
-            label: method.title
+            label: method.title,
+            danger: method.color === 'danger',
           })),
           onClick: handleMenuClick,
         }}
